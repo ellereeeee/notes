@@ -1,3 +1,5 @@
+![git logo](https://git-scm.com/images/logos/1color-orange-lightbg@2x.png)
+
 ## Git Commands and GitHub Functions
 
 This document contains Git commands and GitHub functions I learned from Udacity's [How to Use Git and GitHub Course](https://www.udacity.com/course/how-to-use-git-and-github--ud775) as well as more things from self-work/study.
