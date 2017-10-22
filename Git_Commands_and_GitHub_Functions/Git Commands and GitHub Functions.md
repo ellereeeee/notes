@@ -1,8 +1,8 @@
-##Git Commands and GitHub Functions
+## Git Commands and GitHub Functions
 
 This document contains Git commands and GitHub functions I learned from Udacity's [How to Use Git and GitHub Course](https://www.udacity.com/course/how-to-use-git-and-github--ud775) as well as more things from self-work/study.
 
-####Key Things and Concepts
+#### Key Things and Concepts
 
 **version control** - a way to keep different versions of files saved at different points in time. Dropbox, Wikipedia, and Google Docs all have they own way of doing version control.
 
@@ -34,7 +34,7 @@ This document contains Git commands and GitHub functions I learned from Udacity'
 
 **upstream** - a common-practice remote name for the original repository when you're working with a fork but need to update your local remote (origin/master) with the original repository.
 
-####Common Workflow Situations
+#### Common Workflow Situations
 
 **Making a repository** - Create a directory, either with Windows Explorer (if you're on PC) or in Git Bash with `mkdir`. Run `git init` and the repository is created.
 
@@ -49,7 +49,7 @@ _Note: If you experience a merge conflict in a pull request due to changes in co
 
 **Contributing code to a project** - make new code on separate branch. This is considered a common practice. Push it to your fork. Open a pull request on GitHub.
 
-####Git Commands
+#### Git Commands
 
 **`git init`** - use to create a repository on your computer. Do this in a directory.
 
@@ -106,7 +106,7 @@ _Ex: The following commands are different but the outcome is the same._
 
 **`git pull`** - updates your local branch (including your working directory) from the remote repository. This is the same thing as running `git fetch` then `git merge`.
 
-####GitHub Functions
+#### GitHub Functions
 
 **fork** - both a noun and a verb. Makes a copy of someone else repository onto your GitHub account. Allows you to modify your copy of someone else's project without modifying the original creator's repository. Credits the original author. Similar to cloning, except all copying is done on GitHub.
 
