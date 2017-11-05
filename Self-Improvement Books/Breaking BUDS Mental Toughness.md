@@ -8,11 +8,9 @@ If you're cynical about anything self-help related, you might be reassured to kn
 
 ####1) Segmenting
 
-Segmenting is short-term goal setting. Navy SEALs endure grueling workouts all day long during the first phase of hell week. To use segmenting, a hopeful SEAL may think to himself "I just have to make it to lunch" or "I just have to make it to dinner."
+Segmenting is short-term goal setting. Navy SEALs endure grueling workouts all day long during the first phase of hell week. To use segmenting, a hopeful SEAL may think to himself "I just have to make it to lunch" or "I just have to make it to dinner." Such goals are much more manegeable and less stressful compared to the thought of having to do grueling workouts for six months (the length of BUD/S).
 
-Someone learning to code could think "I just need to finish this chapter" in a book or "I just need to find where the bug was introduced" in code. If you use the pomodoro technique, you could say "I just need to do this for 25 minutes."
-
-
+Someone learning to code could think "I just need to finish this chapter" in a book or "I just need to find where the bug was introduced" in code. If you use the pomodoro technique, you could say "I just need to do this for 25 minutes." This would be less stressful then thinking about all the work you have may to do in one day or the amount of work it will take to finish a feature or application.
 
 ####2) Visualization
 
