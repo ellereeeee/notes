@@ -1,0 +1,239 @@
+
+<div id="root"></div>
+<style>
+  .box {
+    border: 1px solid black;
+  }
+  
+  .box--large {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .box--medium {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .box--small {
+    width: 60px;
+    height: 60px;
+  }
+</style>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+<script type="text/babel">
+
+// notice how we use an object instead of a string for the styles. Also, we can use the number twenty which React treats as a pixel value.
+
+//const element = (
+//  <div>
+//    <div 
+//       className = "box box--small"
+//       style={{paddingLeft: 20}}
+//    >
+//        box
+//      </div>
+//    
+//  </div>
+//)
+
+// you could extract out the props into an object and 
+// spread them onto the div for the same result
+
+
+// you could make a className variable too and it would still work
+// `class` instead of `className` wouldn't work because you can't have variables called `class`. It's a syntax error.
+//const className = 'box box--small'
+//const props = {
+//  className,
+//  style :{paddingLeft: 20},
+//}
+//
+//const element = (
+//  <div>
+//    <div {...props}>box</div>
+//  </div>
+//)
+
+
+//here we make the function `Box` with the props parameter so we can add in more props.
+//function Box(props) {
+//  return (
+//    <div
+//      className = "box box--small"
+//      style = {{paddingLeft: 20}}
+//      {...props}
+//     />
+//  )
+//}
+//
+//const element = (
+//  <div>
+//      <Box style={{backgroundColor: 'lightblue'}}>small box</Box>
+//  </div>
+//)
+// we lose the padding in the `Box` declaration! This is because object spread does a shallow merge of the objects given, so the style prop given to the box component is overriding its own style prop made in the `Box` function declaration. In other words, `style={{backgroundColor: 'lightblue'}}` overrides `style = {{paddingLeft: 20}}`
+
+
+// Let's destructure the props
+
+
+//1) pull out the style prop
+//2) call the rest of the props rest
+//3) spread the rest props onto the div,
+//4) then merge the style prop with our own styles
+// Now the background is light blue and we retain the padding.
+// This would be difficult if we had a string instead of an object for the styles, so the object is useful.
+
+//function Box({style, ...rest}) { // 1, then 2
+//  return (
+//    <div
+//      className = "box box--small"
+//      style = {{paddingLeft: 20, ...style}} // 4
+//      {...rest} // 3
+//     />
+//  )
+//}
+//const hi = 'hi'; 
+//
+//const element = (
+//  <div>
+//      <Box style={{backgroundColor: 'lightblue'}}>small box</Box>
+//  </div>
+//)
+
+// Let's do the same to className now.
+// the same thing happens again. The box CSS is overwritten by className due to the spread operator's shallow merge. We see no border around the
+// box in the browser.
+// So we do the same thing to fix it. We destrcture className
+// out and assign the className on the div to a template literal
+// instead
+
+//function Box({style, className = "", ...rest}) { // 1, then 2
+//  return (
+//    <div
+//      className = {`box ${className}`}
+//      style = {{paddingLeft: 20, ...style}} // 4
+//      {...rest} // 3
+//     />
+//  )
+//}
+//
+//const element = (
+//  <div>
+//    <Box 
+//      style={{backgroundColor: 'lightblue'}}
+//  >
+//    small box
+//  </Box>
+//  </div>
+//)
+//
+//ReactDOM.render(
+//  element,
+//  document.getElementById('root'),
+//)
+
+// it works now!
+
+// if we were to pass no className in element to Box, the dom would say "undefined" for className since it does not exist. To deal with this, you can give className a default value of an empty string in the Box parameter.
+
+// Let's try making several boxes
+
+//function Box({style, className = "", ...rest}) { // 1, then 2
+//  return (
+//    <div
+//      className = {`box ${className}`}
+//      style = {{paddingLeft: 20, ...style}} // 4
+//      {...rest} // 3
+//     />
+//  )
+//}
+//
+//const element = (
+//  <div>
+//    <Box 
+//      className = "box--small"
+//      style={{backgroundColor: 'lightblue'}}
+//  >
+//    small box
+//  </Box>
+//  <Box 
+//    className = "box--medium"
+//    style={{backgroundColor: 'pink'}}
+//  >
+//    medium box
+//  </Box>
+//  <Box 
+//    className = "box--large"
+//    style={{backgroundColor: 'orange'}}
+//  >
+//    large box
+//  </Box>
+//  </div>
+//)
+//
+//ReactDOM.render(
+//  element,
+//  document.getElementById('root'),
+//)
+
+// One possible disadvantage with our class names is that the user must be familiar with them (i.e. "box--small"). Let's set it up so that the code-author types in the size they want and the box applies the appropriate className.
+
+// Below we change the className property to size and destructure out
+// the size property into the Box parameters.
+// We make a variable called sizeClassName that is equal to the 
+// box--XXXX class the user wants. We achieve this by interpolation.
+// If no size is passed into Box then we return an empty string
+// so it doesn't appear undefined in the DOM.
+
+function Box({style, size, className = "", ...rest}) { // 1, then 2
+  const sizeClassName = size ? `box--${size}` : ''
+  return (
+    <div
+      className = {`box ${className} ${sizeClassName}`}
+      style = {{paddingLeft: 20, ...style}} // 4
+      {...rest} // 3
+     />
+  )
+}
+
+const element = (
+  <div>
+    <Box 
+      size="small"
+      style={{backgroundColor: 'lightblue'}}
+    >
+      small box
+    </Box>
+    <Box 
+      size="medium"
+      style={{backgroundColor: 'pink'}}
+    >
+      medium box
+    </Box>
+    <Box 
+      size="large"
+      style={{backgroundColor: 'orange'}}
+    >
+      large box
+    </Box>
+  </div>
+)
+
+ReactDOM.render(
+  element,
+  document.getElementById('root'),
+)
+
+// In review, to style a React component, you can use the className prop to assign className's in regular CSS style. 
+
+// You can also use the style prop which accepts an object of CSS
+// One more important thing to note about the style prop is that the values are not vendor-prefixed for you. So you have to do it yourself.
+
+// the main trick from this lesson is deconstructing things into the function parameters to make your components more customizable and in some cases user-friendly/intuitive
+
+
+</script>
