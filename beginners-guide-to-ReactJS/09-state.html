@@ -124,15 +124,62 @@ Now be able to dynamically update our state.
 8) We add an onClick handler to our start and stop button. We give it the value of this.handleRunClick
 9) We make handleRunClick in our code.
 10) We make an onClick handler for our clear button and make it in our class.
-!!! left off around 4:14 on the setInterval function
+11) we make the constant startTime Let's examine how this works. First, we make the constant startTime, which is the time in ms passed since 01.01.1970 minus 0. We update it as often as possible with setInterval, which reassigns the value of lapse by Date.now minus startTime. In this way time passing is displayed. We also making running equal true so the button shows "Stop" once the timer starts.
 */
+//class StopWatch extends React.Component {
+//  state = {lapse: 0, running: false}
+//  handleRunClick = () => {
+//    const startTime = Date.now() - this.state.lapse
+//    setInterval(() => {
+//      this.setState({lapse: Date.now() - startTime})
+//    })
+//    this.setState({running: true})
+//  }
+//  handleClearClick = () => {
+//    this.setState({lapse: 0, running: false})
+//  }
+//  render() {
+//    const {lapse, running} = this.state
+//    const buttonStyles = {
+//      border: '1px solid #ccc',
+//      background: '#fff',
+//      fontSize: '2em',
+//      padding: 15,
+//      margin: 5,
+//      width: 200,
+//    }
+//    return (
+//      <div style={{textAlign: 'center'}}>
+//        <label
+//          style={{fontSize: '5em', display: 'block'}}
+//        >
+//          {lapse}ms
+//        </label>
+//        <button onClick={this.handleRunClick} style={buttonStyles}>{running ? 'Stop' : 'Start'}</button>
+//        <button onClick={this.handleClearClick} style={buttonStyles}>Clear</button>
+//      </div>
+//    )
+//  }
+//}
+//
+//const element = <StopWatch />
+//ReactDOM.render(
+//  element,
+//  document.getElementById('root'),
+//)
+
+// let's change the code to make the behavior change depending on the running state
+
+// left off at this.setState function around 4:50
+
 class StopWatch extends React.Component {
   state = {lapse: 0, running: false}
   handleRunClick = () => {
     const startTime = Date.now() - this.state.lapse
     setInterval(() => {
-      this.setState()
+      this.setState({lapse: Date.now() - startTime})
     })
+    this.setState({running: true})
   }
   handleClearClick = () => {
     this.setState({lapse: 0, running: false})
