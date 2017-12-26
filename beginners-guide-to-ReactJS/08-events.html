@@ -1,0 +1,150 @@
+<div id="root"></div>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+<script type="text/babel">
+
+// base code
+
+//const state = {eventCount: 0, username: ''}
+//
+//function App() {
+//  return (
+//    <div>
+//      <p>
+//        There have been {state.eventCount} events
+//      </p>
+//      <p>
+//        <button>😄</button>
+//      </p>
+//      <p>You typed: {state.username}</p>
+//      <p>
+//        <input />
+//      </p>
+//    </div>
+//  )
+//}
+//
+//function setState(newState) {
+//  Object.assign(state, newState)
+//  renderApp()
+//}
+//
+//function renderApp() {
+//  ReactDOM.render(
+//    <App />,
+//    document.getElementById('root'),
+//  )
+//}
+//
+//renderApp()
+
+// 1) the onClick event with buttons
+
+//const state = {eventCount: 0, username: ''}
+
+//function App() {
+//  return (
+//    <div>
+//      <p>
+//        There have been {state.eventCount} events
+//      </p>
+//      <p>
+//        <button onFocus={increment}>😄</button>
+//      </p>
+//      <p>You typed: {state.username}</p>
+//      <p>
+//        <input />
+//      </p>
+//    </div>
+//  )
+//}
+//
+//function increment() {
+//  setState({
+//    eventCount: state.eventCount + 1,
+//  })
+//}
+//
+//function setState(newState) {
+//  Object.assign(state, newState)
+//  renderApp()
+//}
+//
+//function renderApp() {
+//  ReactDOM.render(
+//    <App />,
+//    document.getElementById('root'),
+//  )
+//}
+//
+//renderApp()
+
+/*
+Above we have an `App` that creates a UI for us. The constant `state` keeps track of the states. The function setState updates our state with whatever we pass into setState. setState also rerenders with the `renderApp` function everytime we call it.
+
+We make a function called `increment` and eventCount is incremented everytime we click the button.
+
+We can also do the same thing with `onMouseOver`.
+
+And `onFocus`.
+*/
+
+// 2) input
+
+//const state = {eventCount: 0, username: ''}
+//
+//function App() {
+//  return (
+//    <div>
+//      <p>
+//        There have been {state.eventCount} events
+//      </p>
+//      <p>
+//        <button onFocus={increment}>😄</button>
+//      </p>
+//      <p>You typed: {state.username}</p>
+//      <p>
+//        <input 
+//          onChange = {updateUsername}
+//        />
+//      </p>
+//    </div>
+//  )
+//}
+//
+//function increment() {
+//  setState({
+//    eventCount: state.eventCount + 1,
+//  })
+//}
+//
+//function updateUsername(event) {
+//  console.log(event)
+//  setState({
+//    username: event.target.value,
+//  })
+//}
+//
+//function setState(newState) {
+//  Object.assign(state, newState)
+//  renderApp()
+//}
+//
+//function renderApp() {
+//  ReactDOM.render(
+//    <App />,
+//    document.getElementById('root'),
+//  )
+//}
+//
+//renderApp()
+
+// input is unique in that they provide an onChange event. every time the input changes immediately we'll get this function called. if we want to update hte username state we'll need then we're going to need what the value of the input is.
+
+// we'll make a function called `updateUsername` with `event` as a parameter. 
+
+//event.target gets the input node and .value gets the value of the input node. ... left off around 2:40
+
+// React has it's own even system where it optimizes things for us with event delegation. There's only one handler for each type on the entire document, which manages calling your event handlers. One pro about how React does events is that it's directly on the element that you're rendering and what you're passing is a direct reference to the function that you want to have called. It's pretty easy to follow the code path of events that you have.
+</script>
