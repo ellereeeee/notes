@@ -5,19 +5,54 @@
 <div id="root"></div>
 
 <script type="text/babel">
+// Our base code.
+/*
+This code creates a button with a counter.
+We have class `Counter` which extends `React.Component`. We pass all of our constructor arguments into super and put our count into our state.
+
+We render a button with a counter that increments when clicked.
+
+The arrow function is ok in `onClick`, but it's a bit verbose/hard to read.
+
+
+*/
+
+//class Counter extends React.Component {
+//  constructor(...args) {
+//    super(...args)
+//    this.state = {count: 0}
+//  }
+//  render() {
+//    return (
+//      <button 
+//        onClick={() =>
+//          this.setState(({count}) => ({
+//            count: count + 1,
+//        }))}
+//      >
+//        {this.state.count}
+//      </button>
+//    )
+//  }
+//}
+
+// Here we pull out the `onClick` function into `handleClick()` to try to improve readability. The counter doesn't work anymore! Left off around 0:40
+
 class Counter extends React.Component {
   constructor(...args) {
     super(...args)
     this.state = {count: 0}
   }
   handleClick() {
-    this.setState(({count}) => ({
-      count: count + 1,
-    }))
+          this.setState(({count}) => ({
+            count: count + 1,
+        }))
   }
   render() {
     return (
-      <button onClick={this.handleClick}>
+      <button 
+        onClick={this.handleClick}
+      >
         {this.state.count}
       </button>
     )
