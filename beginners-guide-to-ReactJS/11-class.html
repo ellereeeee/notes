@@ -38,6 +38,29 @@ The arrow function is ok in `onClick`, but it's a bit verbose/hard to read.
 
 // Here we pull out the `onClick` function into `handleClick()` to try to improve readability. The counter doesn't work anymore! Left off around 0:40
 
+//class Counter extends React.Component {
+//  constructor(...args) {
+//    super(...args)
+//    this.state = {count: 0}
+//  }
+//  handleClick() {
+//          this.setState(({count}) => ({
+//            count: count + 1,
+//        }))
+//  }
+//  render() {
+//    return (
+//      <button 
+//        onClick={this.handleClick}
+//      >
+//        {this.state.count}
+//      </button>
+//    )
+//  }
+//}
+
+// Use explicit binding with the builty-in utility `bind` to fix the issue
+
 class Counter extends React.Component {
   constructor(...args) {
     super(...args)
@@ -51,7 +74,7 @@ class Counter extends React.Component {
   render() {
     return (
       <button 
-        onClick={this.handleClick}
+        onClick={this.handleClick.bind(this)}
       >
         {this.state.count}
       </button>
