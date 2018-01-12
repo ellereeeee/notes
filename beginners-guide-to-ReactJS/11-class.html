@@ -61,12 +61,97 @@ The arrow function is ok in `onClick`, but it's a bit verbose/hard to read.
 
 // Use explicit binding with the builty-in utility `bind` to fix the issue
 
+//class Counter extends React.Component {
+//  constructor(...args) {
+//    super(...args)
+//    this.state = {count: 0}
+//  }
+//  handleClick() {
+//          this.setState(({count}) => ({
+//            count: count + 1,
+//        }))
+//  }
+//  render() {
+//    return (
+//      <button 
+//        onClick={this.handleClick.bind(this)}
+//      >
+//        {this.state.count}
+//      </button>
+//    )
+//  }
+//}
+
+// Remove performance bottleneck in `onClick`
+
+//class Counter extends React.Component {
+//  constructor(...args) {
+//    super(...args)
+//    this.state = {count: 0}
+//    this.handleClick = this.handleClick.bind(this)
+//  }
+//  handleClick() {
+//          this.setState(({count}) => ({
+//            count: count + 1,
+//        }))
+//  }
+//  render() {
+//    return (
+//      <button 
+//        onClick={this.handleClick}
+//      >
+//        {this.state.count}
+//      </button>
+//    )
+//  }
+//}
+
+// Using Public Class Fields
+
+//class Counter extends React.Component {
+//  state = {count: 0}
+//  handleClick = this.handleClick.bind(this)
+//  handleClick() {
+//          this.setState(({count}) => ({
+//            count: count + 1,
+//        }))
+//  }
+//  render() {
+//    return (
+//      <button 
+//        onClick={this.handleClick}
+//      >
+//        {this.state.count}
+//      </button>
+//    )
+//  }
+//}
+
+// `handleClick` removed from prototype, only on instance
+
+//class Counter extends React.Component {
+//  state = {count: 0}
+//  handleClick = function() {
+//          this.setState(({count}) => ({
+//            count: count + 1,
+//        }))
+//  }.bind(this)
+//  render() {
+//    return (
+//      <button 
+//        onClick={this.handleClick}
+//      >
+//        {this.state.count}
+//      </button>
+//    )
+//  }
+//}
+
+// no bind, using arrow functions for lexical this
+
 class Counter extends React.Component {
-  constructor(...args) {
-    super(...args)
-    this.state = {count: 0}
-  }
-  handleClick() {
+  state = {count: 0}
+  handleClick = () => {
           this.setState(({count}) => ({
             count: count + 1,
         }))
@@ -74,7 +159,7 @@ class Counter extends React.Component {
   render() {
     return (
       <button 
-        onClick={this.handleClick.bind(this)}
+        onClick={this.handleClick}
       >
         {this.state.count}
       </button>
