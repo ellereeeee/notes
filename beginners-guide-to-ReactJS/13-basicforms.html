@@ -1,0 +1,74 @@
+<body>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+
+// base code
+
+//class NameForm extends React.Component {
+//  render() {
+//    return (
+//    <form>
+//      <label>
+//        Name:
+//        <input type="text" />
+//        <button type="submit">Submit</button>
+//      </label>
+//    </form>
+//    )
+//  }
+//}
+
+// prevent default refresh
+
+//class NameForm extends React.Component {
+//  handleSubmit = event => {
+//    event.preventDefault()
+//  }
+//  render() {
+//    return (
+//    <form onSubmit={this.handleSubmit}>
+//      <label>
+//        Name:
+//        <input type="text" />
+//        <button type="submit">Submit</button>
+//      </label>
+//    </form>
+//    )
+//  }
+//}
+
+// the target event property, event.target[0].value, the name prop, and the ref
+
+class NameForm extends React.Component {
+  handleSubmit = event => {
+    event.preventDefault()
+    console.log({target: event.target})
+    console.log(event.target[0].value)
+    console.log(event.target.elements.username.value)
+    console.log("it works: " + this.inputNode.value)
+  }
+  setRef = node => {
+    this.inputNode = node
+  }
+  render() {
+    return (
+    <form onSubmit={this.handleSubmit}>
+      <label>
+        Name:
+        <input type="text" name="username" ref={this.setRef}/>
+        <button type="submit">Submit</button>
+      </label>
+    </form>
+    )
+  }
+}
+
+ReactDOM.render(
+  <NameForm />,
+  document.getElementById('root'),
+)
+</script>
+</body>
