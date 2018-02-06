@@ -50,44 +50,43 @@
 //  document.getElementById('root'),
 //)
 
-// it's dynamic!
+// submit button is greyed out for unacceptable inputs
 
-class NameForm extends React.Component {
-  state = {error:null}
-  handleSubmit = event => {
-    event.preventDefault()
-    const value = 
-      event.target.elements.username.value
-    const error = this.props.getErrorMessage(
-      value,
-    )
-    if (error) {
-      alert(`error: ${error}`)
-    } else {
-      alert(`success: ${value}`)
-    }
-    handleChange = event => {
-      const {value} = event.target
-      this.setState({
-        error: this.props.getErrorMessage(value)
-      })
-    }
-  }
-
-  render() {
-    const {error} = this.state
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-         {error ? <div>error</div> : null}
-          Name:
-          <input type="text" onChange={this.handleChange} name="username" />
-        </label>
-        <button disabled={Boolean(error)} type="submit">Submit</button>
-      </form>
-    )
-  }
-}
+//class NameForm extends React.Component {
+//  state = {error:null}
+//  handleSubmit = event => {
+//    event.preventDefault()
+//    const value = 
+//      event.target.elements.username.value
+//    const error = this.props.getErrorMessage(
+//      value,
+//    )
+//    if (error) {
+//      alert(`error: ${error}`)
+//    } else {
+//      alert(`success: ${value}`)
+//    }
+//  }
+//  handleChange = (event) => {
+//    const {value} = event.target
+//    this.setState({
+//      error: this.props.getErrorMessage(value)
+//    })
+//  }
+//  
+//  render() {
+//    const {error} = this.state
+//    return (
+//      <form onSubmit={this.handleSubmit}>
+//        <label>
+//          Name:
+//          <input type="text" onChange={this.handleChange} name="username" />
+//        </label>
+//        <button disabled={Boolean(error)} type="submit">Submit</button>
+//      </form>
+//    )
+//  }
+//}
 
 ReactDOM.render(
   <NameForm
@@ -103,5 +102,6 @@ ReactDOM.render(
   />,
   document.getElementById('root'),
 )
+
 </script>
 </body>
