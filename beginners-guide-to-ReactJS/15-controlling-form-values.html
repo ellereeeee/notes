@@ -1,0 +1,96 @@
+<body>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+
+// starting code 
+
+class MyFancyForm extends React.Component {
+  static availableOptions = [
+    'apple',
+    'grape',
+    'cherry',
+    'orange',
+    'pear',
+    'peach',
+  ]
+  handleCommaSeparatedChange = event => {
+    console.log('handleCommaSeparatedChanged')
+  }
+  handleMultilineChange = event => {
+    console.log('handleMultilineChanged')
+  }
+  handleMultiSelectChange = event => {
+    console.log('handleMultiSelectChanged')
+  }
+  render() {
+    return (
+      <form>
+        <div>
+          <label>
+            comma separated values:
+            <br />
+            <input 
+              type="text"
+              onChange={
+                this.handleCommaSeparatedChange
+              }
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            multiline values:
+            <br />
+            <textarea
+              rows={
+                MyFancyForm.availableOptions
+                  .length
+              }
+              onChange={
+                this.handleMultilineChange
+              }
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            multiSelect values:
+            <br />
+            <select
+              multiple
+              size={
+                MyFancyForm.availableOptions
+                  .length
+              }
+              onChange={
+                this.handleMultiSelectChange
+              }
+            >
+              {MyFancyForm.availableOptions.map(
+                optionValue => (
+                  <option
+                    key={optionValue}
+                    value={optionValue}
+                  >
+                    {optionValue}
+                  </option>
+                ),
+              )}
+            </select>
+          </label>
+        </div>
+      </form>
+    )
+  }
+}
+
+ReactDOM.render(
+  <MyFancyForm/>,
+  document.getElementById('root'),
+)
+
+</script>
+</body>
