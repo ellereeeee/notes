@@ -302,6 +302,8 @@
 //  }
 //}
 
+// make select element update own state and synchronize with others states
+
 class MyFancyForm extends React.Component {
   static availableOptions = [
     'apple',
@@ -339,7 +341,14 @@ class MyFancyForm extends React.Component {
     })
   }
   handleMultiSelectChange = event => {
-    console.log('handleMultiSelectChanged')
+    const allVals = Array.from(event.target.selectedOptions).map(
+      o => o.value,
+    )
+    this.setState({
+      multiSelect: allVals,
+      multiline: allVals.join('\n'),
+      commaSeparated: allVals.join(',')
+    })
   }
   render() {
     const {commaSeparated, multiline, multiSelect} = this.state
