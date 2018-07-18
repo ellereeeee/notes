@@ -32,3 +32,25 @@
 4) Never use black in your design.
 
 5) Choose colors wisely. Certain colors evoke psychological responses from the user.
+
+#### III. Working with Images
+
+1) Put text directly on an image. Make sure there is color contrast between the text color and image.
+
+2) You can overlay the image with a color to create contract betweent text and image color.
+
+3) Put your text in a box to make it easy to read.
+
+4) Blur the image. Make sure the text stays over the blurred image for all resolutions.
+
+5) Use the "floor fade" technique. This is when you darken the bottom of an image and use lighter text over it. Here is example CSS:
+
+```
+.floor-fade {
+
+background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6) ), url(YOUR IMAGE HERE);
+
+}
+```
+
+6) Use your picture or use free ones online, like at Unsplash.com.
