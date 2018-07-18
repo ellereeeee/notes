@@ -55,4 +55,16 @@ background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6) ), u
 
 6) Use your picture or use free ones online, like at Unsplash.com.
 
+## IV. Working with Icons
+
+1) Use icons to list features/steps.
+
+2) Use icons for actions and links. Your icons should be recognizable and your links should be labeled.
+
+3) Icons should not take center stage. They should play a supporting role in your design.
+
+4) Use icon fonts whenever possible. Icon fonts use vector images that scale at any resolution.
+
+5) There are lots of free icons online.
+
 * Checkout the e-book [_Best Resources for Web Design and Development with HTML5 and CSS3_](http://webdesigncourse.co/resources/data/course-e-book-website-v2.0.pdf) by Jonas Schmedtmann.
