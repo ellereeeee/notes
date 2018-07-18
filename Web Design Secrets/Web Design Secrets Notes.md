@@ -1,4 +1,4 @@
-#### I. Typography
+## I. Typography
 
 1) Keep your font between 15 and 25 px.
 
@@ -21,7 +21,7 @@
   
   4) Use only that one typeface or pair two good fonts. Play around with them.
   
-#### II. Colors
+## II. Colors
 
 1) Use only one base color.
 
@@ -33,7 +33,7 @@
 
 5) Choose colors wisely. Certain colors evoke psychological responses from the user.
 
-#### III. Working with Images
+## III. Working with Images
 
 1) Put text directly on an image. Make sure there is color contrast between the text color and image.
 
@@ -54,3 +54,5 @@ background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6) ), u
 ```
 
 6) Use your picture or use free ones online, like at Unsplash.com.
+
+* Checkout the e-book [_Best Resources for Web Design and Development with HTML5 and CSS3_](http://webdesigncourse.co/resources/data/course-e-book-website-v2.0.pdf) by Jonas Schmedtmann.
