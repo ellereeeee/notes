@@ -1,10 +1,10 @@
 These are my notes on **API and Web Service Introduction** by Nate Ross at [udemy.com](https://www.udemy.com/api-and-web-service-introduction/learn/v4/overview).
 
-### Section 1: API
+### Section 2: API
 
 #### What is an API?
 
-An API is where you tell a program you don't own to run.
+**An API is where you tell a program you don't own to run.**
 
 A stands for application, P for programming, and I for interface.
 
