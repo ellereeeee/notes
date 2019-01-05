@@ -41,3 +41,13 @@ A more complex and proper example of an API is using eBay's Order API. This is n
 #### API Mashup
 
 This is not a real term, but one used by the course instructor to explain a concept. "API Mashup" is when you use several APIs to make your own API. An example of this would be a travel website using the APIs of several airline companies to find the flight and price availability for the flight you search for. Using several APIs can be powerful.
+
+### Section 3: Web Service
+
+#### What is a Web Service?
+
+**A web service is an API that uses the internet.** Not all APIs use the web.
+
+Web services use:
+- XML or JSON to format data over the internet
+- REST, SOAP, or XML/RPC protocols to transfer that data
