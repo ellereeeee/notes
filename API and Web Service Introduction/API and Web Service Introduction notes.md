@@ -119,3 +119,7 @@ You can see a list of header fields on [Wikipedia](https://en.wikipedia.org/wiki
 - Accept-Language. - List of acceptable languages for response. 'de' would return responses in German.
 - Cache-Control. Determines whether or not an object may be cachedand for how long.
 
+#### HTTP Blank Line
+
+The purpose of the blank line is to show where the headers finish and where the body begins.
+
