@@ -109,3 +109,13 @@ It's important to know what API methods are idempotent.
 
 Calling the PUT method multiple times can have different results by creating new resources.
 
+#### HTTP Headers
+
+HTTP headers provide required information about the request or response, or about the object sent in the mssage body. These are different kinds of headers for requests or responses.
+
+You can see a list of header fields on [Wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields). Some commons ones include:
+
+- Host. The domain name of the server, like www.google.com
+- Accept-Language. - List of acceptable languages for response. 'de' would return responses in German.
+- Cache-Control. Determines whether or not an object may be cachedand for how long.
+
