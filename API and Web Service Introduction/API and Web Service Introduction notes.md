@@ -51,3 +51,32 @@ This is not a real term, but one used by the course instructor to explain a conc
 Web services use:
 - XML or JSON to format data over the internet
 - REST, SOAP, or XML/RPC protocols to transfer that data
+
+### Section 4: Introduction to HTTP
+
+HTTP stands for Hyptertext Transfer Protocol. 
+
+Regular text does nothing. An example is www.google.com. Hypertext means text that can go to somewhere else. Your browser will automatically add http// or https// in front of the regular text.
+
+HTTP has four parts.
+
+1) Start line - starts the program and tells it what to do
+
+2) Headers - provides additional information other than the start line
+
+3) Blank line - nothing
+
+4) Body - where you send information
+
+Only the start line is mandatory. Both requests and responses are done with HTTP.
+
+Here are some things that are included or happen in the four different parts of HTTP at a glance. These will be discussed in detail in later sections.
+
+|HTTP|REQUEST|RESPONSE|
+|:-:|:-:|:-:|
+|START LINE|http version, method, folders & params|http version, status code|
+|HEADERS|host url, token|cookies|
+|BLANK LINE|   |   |
+|BODY|username, pw|HTML page|   |
+
+You can add as many or as few lines to the headers section as you want.
