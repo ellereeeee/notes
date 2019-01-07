@@ -123,3 +123,27 @@ You can see a list of header fields on [Wikipedia](https://en.wikipedia.org/wiki
 
 The purpose of the blank line is to show where the headers finish and where the body begins.
 
+#### HTTP Body
+
+The body is what contains content. It can be an image, an HTML web page, a video, data, etc. It can be content you're sending to an API if you're making a request or it can be content that comes from an API in a reponse.
+
+The Content-Type header determines what type of content is being sent or received in the body.
+
+Here are some different [content types](https://en.wikipedia.org/wiki/Media_type):
+
+- application/javascript
+- application/json
+- application/xml
+- application/pdf
+- application/ld+json
+- text/css
+- text/html
+- text/xml
+- text/csv
+- image/png
+- image/jpeg
+- image/gif
+
+They are organized by a type then a subtype like this: `type "/" [tree "."] subtype ["+" suffix] *[";" parameter]`.
+
+JSON and XML are two content types for sending or receiving data through APIs. 
