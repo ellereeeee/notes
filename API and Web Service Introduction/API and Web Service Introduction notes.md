@@ -80,3 +80,32 @@ Here are some things that are included or happen in the four different parts of 
 |BODY|username, pw|HTML page|   |
 
 You can add as many or as few lines to the headers section as you want.
+
+#### HTTP Start Line
+
+Let's examine what the start line includes for both a HTTP request and HTTP response.
+
+||Request|Response|
+|:-:|:-:|:-:|
+|Name|Start Line, Request Line|Start Line, Response Line, Status Line|
+|HTTP Version|HTTP/1.1|HTTP/1.1|
+|Method|GET, POST, PUT, DELETE, etc.|No|
+|API Program Folder Location|Yes (example: /search)|No|
+|Parameters|Yes (example: ?q=tuna)|No|
+|Status Code|No|Yes(example: 200 OK)|
+|Format|Method(space)API Program Folder Location+Parameters(space)HTTP Version|HTTP Version + Status Code|
+|Example|GET /search?q=tuna HTTP/1.1|HTTP/1.1 200 OK|
+
+**Idempotence** is an important HTTP concept. It means you can do something as many time as you want and the result stays the same. It is an action that is safe to repeat.
+
+It's important to know what API methods are idempotent.
+
+|Method|Idempotent? (safe to repeat)|
+|:-:|:-:|
+|GET|Yes|
+|POST|No|
+|PUT|Yes|
+|DELETE|Yes|
+
+Calling the PUT method multiple times can have different results by creating new resources.
+
