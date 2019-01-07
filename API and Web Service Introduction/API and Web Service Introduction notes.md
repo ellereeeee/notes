@@ -10,7 +10,7 @@ A stands for application, P for programming, and I for interface.
 
 You can think of an API conversely. The interface (I) is where you tell a program (P) to run in an application (A).
 
-A simple example of this is Google. The browser or webpage if the interface. The program is the search function. The application is Google.
+A simple example of this is Google. The browser or webpage is the interface. The program is the search function. The application is Google.
 
 When referring to APIs, people usually mean ones that exist where the server is located.
 
