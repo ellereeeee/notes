@@ -195,3 +195,33 @@ XSD is important for security. If you do not follow the guidelines set by XSD yo
 ```
 
 The XML Schema above shows that the first tag should be "brightstar," complexType means those elements should be nested in "brightstar", sequence means those nested elements should be in that order, and type means the info in those XML tags must be those types.
+
+### JSON
+
+JSON stands for **J**ava**S**cript **O**bject **N**otation.
+
+It holds data like XML. It is the object data structure of JavaScript. The header line is `Content-Type: application/json`. JSON goes in the HTTP body.
+
+It uses "key" : "value" pairs (example "Size" : "Small"). Douglas Crockford created JSON.
+
+A JSON version of the XML pizza above looks like this:
+
+```json
+{ "Pizza" : [
+  {"Size" : "Small",
+   "Toppings" : ["Onions", "Mushrooms"]
+  }
+]}
+```
+
+It would look something like this in Chrome:
+
+```
+{ "Pizza" : [
+  {"Size" : "Small",
+   "Toppings" : ["Onions", "Mushrooms"]
+  }
+]}
+```
+
+JSON is much more widely used because it's easier to write and the data is more lightweight. JSON also has a schema like XML but you do not really need to deal with it to use JSON.
