@@ -146,4 +146,52 @@ Here are some different [content types](https://en.wikipedia.org/wiki/Media_type
 
 They are organized by a type then a subtype like this: `type "/" [tree "."] subtype ["+" suffix] *[";" parameter]`.
 
-JSON and XML are two content types for sending or receiving data through APIs. 
+JSON and XML are two content types for sending or receiving data through APIs.
+
+### XML
+
+XML stands for e**X**tensible **M*arkup **L**anguage.
+
+It is a content type. The HTTP header line is `Content-Type: application/xml`.
+
+XML holds data sent to or received from the API. The XML is in the body.
+
+XML is similar to HTML in that they both use tags <>. However, the XML is "extensible" in that you can customize the tags to say whatever you want. For example, "button" in HTML will create a clickable button with default CSS styles, while "button" in XML just means a tag with the value of "button." You cannot change the semantic value of an HTML tag, but you can with XML.
+
+Here is some example XML for a hypothetical pizza company's API. They require data in the form of XML.
+
+```xml
+<Pizza>
+  <Size>Small</Size>
+  <Toppings>
+    <Topping>Onions</Topping>
+    <Topping>Mushrooms</Topping>
+  </Toppings>
+</Pizza>
+```
+
+If you save this as an XML file you can load it and view it in your browser. You will see the markup above with an informational header `<?xml version = "1.0"?>`.
+
+XML was created by the [World Wide Web Consortium](https://www.w3.org/), more commonly knows as W3.
+
+There are sub-standards of XML. One is XPath, which lets you focus on a particular part of XML. For example, the toppings in the pizza XML. XQuery is similar. They are not commonly used. XML Schema, or XSD, tells you how your XML should be structured.
+
+XSD is important for security. If you do not follow the guidelines set by XSD you will receive an error message. Here's an example:
+
+```xsd
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="https://www.w3.org/2001/XMLSchema">
+  
+  <xs:element name="brightstar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="magnitude" type="xs:decimal"/>
+        <xs:element name="distance" type="xs:integer"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+```
+
+The XML Schema above shows that the first tag should be "brightstar," complexType means those elements should be nested in "brightstar", sequence means those nested elements should be in that order, and type means the info in those XML tags must be those types.
