@@ -225,3 +225,16 @@ It would look something like this in Chrome:
 ```
 
 JSON is much more widely used because it's easier to write and the data is more lightweight. JSON also has a schema like XML but you do not really need to deal with it to use JSON.
+
+Here's a quick comparison between XML and JSON.
+
+||XML|JSON|
+|:-:|:-:|:-:|
+|Powerful|Yes|No|
+|Simple|No|Yes|
+|Developed|1997|2001|
+|Popularity|Down|Up|
+
+JSON is powerful but XML is more powerful due to it's tag customizability and use of things like schemas. JSON is much simpler however. JSON is much more popular and becoming more popular.
+
+It may not be necessary to know how to deal with XML, but it's important to know about it and the differences between XML and JSON.
