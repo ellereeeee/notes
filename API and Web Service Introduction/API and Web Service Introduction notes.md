@@ -238,3 +238,22 @@ Here's a quick comparison between XML and JSON.
 JSON is powerful but XML is more powerful due to it's tag customizability and use of things like schemas. JSON is much simpler however. JSON is much more popular and becoming more popular.
 
 It may not be necessary to know how to deal with XML, but it's important to know about it and the differences between XML and JSON.
+
+### What is SOAP and REST?
+
+SOAP and REST are ways to form the HTTP request and response. REST is being used much more than SOAP. REST is much simpler.
+
+### What is SOAP?
+
+SOAP stands for **S**imple **O**bject **A**ccess **P**rotocol. "Simple" is a bit of a misnomer and subjective. The "Object" that is being accessed is a web service/API. "Protocol" means rules/ways to do something. So SOAP is a way to access a web service by following certain rules to form the HTTP request/response.
+
+Every web services that uses SOAP uses a WSDL (**W*eb **S**ervices **D**escription **L**anguage). It is an XML-based language that describes the functionality offered by a web service. It also shows the relevant XML syntax to use the web service.
+
+A SOAP HTTP request is formed as follows:
+
+1) Start line - POST WSDL HTTP Version. The "POST" is not actually used, it is just a placeholder. The WSDL is the WSDL location.
+2) Header line - Content-Type: text/xml.
+3) Blank line
+4) Body - XML envelope formed using WSDL.
+
+SOAP was created by W3C.
