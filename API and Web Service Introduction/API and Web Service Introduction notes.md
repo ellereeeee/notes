@@ -257,3 +257,17 @@ A SOAP HTTP request is formed as follows:
 4) Body - XML envelope formed using WSDL.
 
 SOAP was created by W3C.
+
+### What is REST?
+
+REST is the modern way of accessing a web service by following certain rules to form the HTTP request/response. While SOAP does not use any API methods (it has POST as a placeholder), you can use any for REST. For example, GET, POST, PUT, and DELETE. 
+
+REST can leverages _caches_. A cache is a temporary, local storage of web documents such as HTML pages and images. Using the GET method in REST will check if the data you want matches the data you already have. If it does it will use the web files in your cache and reduce server lag.
+
+REST is _stateless_. "Stateless" in this context means the state of the server you are interacting with in your API request. If the server is not running (the state of not running), the REST API request will wait until the server is, complete the API request, and then send back the response. SOAP in comparison will not do this.
+
+REST stands for **RE**presentation **S**tate **T**ransfer.
+
+If you make a GET request, you are not actually getting the data in the server back, but a copy of it (a representation of the state of the data).
+
+REST is easier to work than SOAP with because you don't have to follow a WSDL and you can tell the program what to do with a simple method (GET, POST, etc.). REST can also send data in any format while SOAP must use XML. Thus REST is more flexible and the preferred modern way of creating or consuming APIs.
