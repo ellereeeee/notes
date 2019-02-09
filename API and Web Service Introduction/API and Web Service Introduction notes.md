@@ -261,3 +261,49 @@ REST stands for **RE**presentation **S**tate **T**ransfer.
 If you make a GET request, you are not actually getting the data in the server back, but a copy of it (a representation of the state of the data).
 
 REST is easier to work with than SOAP with because you don't have to follow a WSDL and you can tell the program what to do with a simple method (GET, POST, etc.). REST can also send data in any format while SOAP must use XML. Thus REST is more flexible and the preferred modern way of creating or consuming APIs.
+
+### OAuth Introduction
+
+These are three topics to understand in regards to web service security.
+
+1) HTTPS
+
+HTTPS is a HTTP protocol that is encrypted. The "S" stands for "secure." Anything with sensitive information should always be done with HTTPS, such as online payments.
+
+2) Authorization Server vs Resource Server
+
+A server is a program which manages access to a service in a network. It is **not** a computer. A server exists on a computer. Multiple servers can exist on the same computer. Sometimes multiple instances of the same server exists on the same computer for performance reasons (i.e. reducing server lag).
+
+An authorization server checks to see if you're allowed to run the program you request. It is specifically made for security. If the authorization is made the request is sent to the resource server, which runs the requested program.
+
+An example of this is ordering a product on ebay. First you make an order on your browser which is sent over HTTPS. The request is first sent to the authorization server, then to the resource server which does the ordering.
+
+It's also possible for the request to go to the resource server first, which then checks the authorization server before running any programs.
+
+Sometimes the authorization server and resource server exist on different computers.
+
+3) Permissions
+
+Permissions is a way for programs/applications to make API requests for you.
+
+An example would be the Google Maps app asking for permission to access your phone's location, then using that info to make an API call to a directions program on a Google computer.
+
+It is important that the app only accesses your location and no other info. This limited access is called _scope_, in this case the phone's location.
+
+**OAuth** is a way to give someone else permission to do something, or "delegated access." In the example above, the Google Maps app will ask your phone for the authority to access your phone, and your phone will then access the user for permission. OAuth will allow limited access by asking for only permission to access the phone's location instead of all of the phone's information. Through OAuth, an access token is granted to Google Maps and an API call is made for directions. Google Maps can continuously use this same token for future API calls.
+
+OAuth has two versions. 1.0 came out in 2007 and 2.0 came out in 2012. 1.0 is deprecated and everyone uses 2.0.
+
+There are five ways to do OAuth which are called OAuth flows.
+
+1) **Authorization Code/Access Token - like in the example above, authorization for something is granted via a code.**
+
+2) **Refresh Token - when another token is granted when the previously granted token expires**
+
+3) Implicit Grant - this is insecure because it is done on the front end and people can intercept it
+
+4) Resource Owner - this can be used when you own the API
+
+5) Client Credentials - this is used machine to machine
+
+You will like only use OAuth methods 1 and 2.
