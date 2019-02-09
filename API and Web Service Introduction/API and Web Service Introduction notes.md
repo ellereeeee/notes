@@ -16,7 +16,7 @@ When referring to APIs, people usually mean ones that exist where the server is 
 
 An example of this is using Google maps in your own website. You did not write the Google maps program. Google did. But by using the Google maps API, you can use their program in your own applications.
 
-These kinds of APIs are created because they are not expensive or difficult to make. The second is because accessing these APIs are platform independent. You can use Python, or browser, or another method to use an API.
+These kinds of APIs are created because they are not expensive or difficult to make. The second is because accessing these APIs are platform independent. You can use Python, a browser, or another method to use an API.
 
 If an API has a "sandbox" mode on an applications' website, you can test an applications' API and practice using it.
 
@@ -111,13 +111,13 @@ Calling the PUT method multiple times can have different results by creating new
 
 #### HTTP Headers
 
-HTTP headers provide required information about the request or response, or about the object sent in the mssage body. These are different kinds of headers for requests or responses.
+HTTP headers provide required information about the request or response, or about the object sent in the message body. These are different kinds of headers for requests or responses.
 
 You can see a list of header fields on [Wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields). Some commons ones include:
 
 - Host. The domain name of the server, like www.google.com
 - Accept-Language. - List of acceptable languages for response. 'de' would return responses in German.
-- Cache-Control. Determines whether or not an object may be cachedand for how long.
+- Cache-Control. Determines whether or not an object may be cached and for how long.
 
 #### HTTP Blank Line
 
@@ -214,16 +214,6 @@ A JSON version of the XML pizza above looks like this:
 ]}
 ```
 
-It would look something like this in Chrome:
-
-```
-{ "Pizza" : [
-  {"Size" : "Small",
-   "Toppings" : ["Onions", "Mushrooms"]
-  }
-]}
-```
-
 JSON is much more widely used because it's easier to write and the data is more lightweight. JSON also has a schema like XML but you do not really need to deal with it to use JSON.
 
 Here's a quick comparison between XML and JSON.
@@ -247,7 +237,7 @@ SOAP and REST are ways to form the HTTP request and response. REST is being used
 
 SOAP stands for **S**imple **O**bject **A**ccess **P**rotocol. "Simple" is a bit of a misnomer and subjective. The "Object" that is being accessed is a web service/API. "Protocol" means rules/ways to do something. So SOAP is a way to access a web service by following certain rules to form the HTTP request/response.
 
-Every web services that uses SOAP uses a WSDL (**W*eb **S**ervices **D**escription **L**anguage). It is an XML-based language that describes the functionality offered by a web service. It also shows the relevant XML syntax to use the web service.
+Every web services that uses SOAP uses a WSDL (**W**eb **S**ervices **D**escription **L**anguage). It is an XML-based language that describes the functionality offered by a web service. It also shows the relevant XML syntax to use the web service.
 
 A SOAP HTTP request is formed as follows:
 
@@ -270,4 +260,4 @@ REST stands for **RE**presentation **S**tate **T**ransfer.
 
 If you make a GET request, you are not actually getting the data in the server back, but a copy of it (a representation of the state of the data).
 
-REST is easier to work than SOAP with because you don't have to follow a WSDL and you can tell the program what to do with a simple method (GET, POST, etc.). REST can also send data in any format while SOAP must use XML. Thus REST is more flexible and the preferred modern way of creating or consuming APIs.
+REST is easier to work with than SOAP with because you don't have to follow a WSDL and you can tell the program what to do with a simple method (GET, POST, etc.). REST can also send data in any format while SOAP must use XML. Thus REST is more flexible and the preferred modern way of creating or consuming APIs.
