@@ -290,7 +290,7 @@ An example would be the Google Maps app asking for permission to access your pho
 
 It is important that the app only accesses your location and no other info. This limited access is called _scope_, in this case the phone's location.
 
-**OAuth** is a way to give someone else permission to do something, or "delegated access." In the example above, the Google Maps app will ask your phone for the authority to access your phone, and your phone will then access the user for permission. OAuth will allow limited access by asking for only permission to access the phone's location instead of all of the phone's information. Through OAuth, an access token is granted to Google Maps and an API call is made for directions. Google Maps can continuously use this same token for future API calls.
+**OAuth** is a way to give someone else permission to do something, or "delegated access." In the example above, the Google Maps app will ask your phone for the authority to access your phone, and your phone will then ask the user for permission. OAuth will allow limited access by asking for only permission to access the phone's location instead of all of the phone's information. Through OAuth, an access token is granted to Google Maps and an API call is made for directions. Google Maps can continuously use this same token for future API calls.
 
 OAuth has two versions. 1.0 came out in 2007 and 2.0 came out in 2012. 1.0 is deprecated and everyone uses 2.0.
 
