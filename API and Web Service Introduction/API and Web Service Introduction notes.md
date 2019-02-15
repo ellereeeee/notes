@@ -307,3 +307,58 @@ There are five ways to do OAuth which are called OAuth flows.
 5) Client Credentials - this is used machine to machine
 
 You will like only use OAuth methods 1 and 2.
+
+### OAuth Details
+
+Let's discuss the first and second OAuth flows above in more detail.
+
+|Flow|Objective|
+|:-:|:-:|
+|Auth Code|Access Token|Session that expires|
+|Refresh Token|Refresh Token|Password used to get new access token|
+
+Two main types of access tokens:
+
+1) Bearer - anybody can use this kind of access token at any time
+
+2) Holder of key - you need an ID to use the token
+
+The purpose of OAuth is delegated access.
+
+In a normal API request, you might request info to an API through an HTTP request. You would have to understand how to work with the API.
+
+To make this process easier, you delegate the API call work to an application.
+
+#### Authorization Code Flow Details
+
+The first thing that happens is the app registers with the API. Let's use the mobile Google Maps app as an example. There are two main APIs: the Google Maps API that exists as a program on a Google computer and the cell phones' API. 
+
+The Google Maps app first registers with the cell phone API by sending the name of the app (Google Maps), the website, and callback url.
+
+A callback url is used to direct the user somewhere after they say "yes" and give permission to an app for access.
+
+After the Google Maps app registers with the cell phones API, the phone gives the app a client id and a client secret. The client is the app Google Maps. A client is anything using the cell phones API, so it could also be a browser. The client id identifies the app. It is public info. The client secret is another piece of information used for authentification that is private.
+
+The Google Map app then accesses the cell phones API using an access token. Specifically, the Google Maps app sends a request to the cell phone for its location. This request includes the client id so the cell phone knows what is calling the cell phones API. 
+
+The cell phone then asks the owner of the phone if it's ok to give the app the phone's location. If the user replies back "yes", then the cell phone sends the Google Maps app an authorization code. This is why this process is called the "authorization code flow." At this point the user is also directed somewhere by the callback url.
+
+The Google Maps app then sends the cell phone the authorization code, client id, and client secret. The cell phone then sends back an access token, which the app can then use to access the Google Maps API.
+
+Let's reexamine this process more generally.
+
+1) A client sends a client ID to the API (on your device) for access.
+
+2) This request is sent to an OAuth server.
+
+3) The OAuth server sends back an authorization code to the client after a user gives permission for access.
+
+4) The client then sends the previously received authorization code to the OAuth server along with the client id and client secret.
+
+5) The authorization server sends back an access token.
+
+6) The client calls the resource server on another computer (i.e. Google computer) with an API using the access token.
+
+7) The resource server contacts the OAuth server (on another Google computer) to find out if the access token is legitimate or not.
+
+8) The resource server sends back a response.
